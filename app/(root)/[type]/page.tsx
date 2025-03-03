@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from "react";
 import Sort from "@/components/Sort";
 import { getFiles } from "@/lib/actions/file.action";

@@ -4,8 +4,6 @@ import React, { useState } from "react";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
@@ -17,7 +15,7 @@ import { cn } from "@/lib/utils";
 import { navItems } from "@/constants";
 import FileUploader from "./FileUploader";
 import { Button } from "./ui/button";
-import { sign } from "crypto";
+
 import { signOutUser } from "@/lib/actions/users.actions";
 
 interface Props {

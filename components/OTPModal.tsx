@@ -3,23 +3,20 @@
 import {
   AlertDialog,
   AlertDialogAction,
-  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
 import {
   InputOTP,
   InputOTPGroup,
-  InputOTPSeparator,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 import { sendEmailOTP, verifySecret } from "@/lib/actions/users.actions";
@@ -69,7 +66,7 @@ const OTPModal = ({
             />
           </AlertDialogTitle>
           <AlertDialogDescription className="subtitle-2 text-center text-light-100">
-            We've sent a code to{" "}
+            We&apos;ve sent a code to{" "}
             <span className="pl-1 text-brand">{email}</span>
           </AlertDialogDescription>
         </AlertDialogHeader>
@@ -104,7 +101,7 @@ const OTPModal = ({
               )}
             </AlertDialogAction>
             <div className="subtitle-2 mt-2 text-center text-light-100">
-              Didn't get a code?
+              Didn&apos;t get a code?
               <Button
                 type="button"
                 variant="link"

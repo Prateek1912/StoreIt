@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 "use server";
 
 import { createAdminClient, createSessionClient } from "@/lib/appwrite";
@@ -18,6 +19,7 @@ export const uploadFile = async ({
   ownerId,
   accountId,
   path,
+// eslint-disable-next-line no-undef
 }: UploadFileProps) => {
   const { storage, databases } = await createAdminClient();
 

@@ -44,10 +44,12 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
 
   const closeAllModals = () => {
     setIsModalOpen(false);
-    setIsDropdownOpen(false);
-    setAction(null);
-    setName(file.name);
-   // setEmails([]);
+    setTimeout(() => {
+      setIsDropdownOpen(false);
+      setAction(null);
+      setName(file.name);
+      //setEmails([]);
+    }, 0);
   };
 
   const handleAction = async () => {
@@ -160,7 +162,13 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
               key={actionItem.value}
               className="shad-dropdown-item"
               onClick={() => {
-                setAction(actionItem);
+                setIsDropdownOpen(false);
+                setAction((prev) => {
+                  if (prev !== actionItem) {
+                    return actionItem;
+                  }
+                  return prev;
+                });
 
                 if (
                   ["rename", "share", "delete", "details"].includes(
@@ -201,7 +209,7 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
         </DropdownMenuContent>
       </DropdownMenu>
 
-      {renderDialogContent()}
+      {isModalOpen && renderDialogContent()}
     </Dialog>
   );
 };
